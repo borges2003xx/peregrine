@@ -27,3 +27,7 @@
  *
  */
 
+float r3;
+int   thermal_delay;
+int   thermal_delay_target;
+
