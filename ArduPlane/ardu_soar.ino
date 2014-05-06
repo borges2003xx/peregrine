@@ -25,6 +25,9 @@
      if (read_climb_rate() > g.thermal_vspeed ) {
        previous_control_mode = current_control_mode;
        calculated_control_mode =  CIRCLE;
+       // frankie mod a dice gives circle radiues
+       float r3 = -1 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(2)));
+       nav_roll_cd  = g.roll_limit_cd / 3*r3;
      }
    }
    
@@ -42,6 +45,8 @@
      
      if (read_climb_rate() < 0 ) {
        calculated_control_mode =  previous_control_mode;
+       // frankie mod previous roll angle
+       nav_roll_cd  = g.roll_limit_cd / 3;
      }
    }
    
