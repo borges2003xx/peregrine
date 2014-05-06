@@ -1190,7 +1190,10 @@ static void update_current_flight_mode(void)
             break;
 
         case STABILIZE:
-            nav_roll_cd        = 0;
+            // nav_roll_cd        = 0;
+            // frankie mod a dice gives circle radiues
+            r3 = -1 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(2)));
+            nav_roll_cd  = g.roll_limit_cd / 3 * r3;
             nav_pitch_cd       = 0;
             // throttle is passthrough
             break;
