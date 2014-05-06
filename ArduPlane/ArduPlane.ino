@@ -1199,7 +1199,7 @@ static void update_current_flight_mode(void)
             // we have no GPS installed and have lost radio contact
             // or we just want to fly around in a gentle circle w/o GPS
             // ----------------------------------------------------
-            nav_roll_cd  = g.roll_limit_cd / 3;
+            // nav_roll_cd  = g.roll_limit_cd / 3;
             nav_pitch_cd = 0;
 
             if (failsafe != FAILSAFE_NONE) {

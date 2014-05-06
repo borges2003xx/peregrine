@@ -16,6 +16,7 @@
 #define SOAR_ACTIVE 0    // Default - disapbled
 #define THERMAL_VSPEED 2 // Default - 2 m/s
 
+
 /*
  *  // HIL_MODE SELECTION
  *  //
