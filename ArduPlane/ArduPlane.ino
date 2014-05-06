@@ -1192,8 +1192,12 @@ static void update_current_flight_mode(void)
         case STABILIZE:
             // nav_roll_cd        = 0;
             // frankie mod a dice gives circle radiues
+            thermal_delay++;
+            if (thermal_delay>10) {
             r3 = -1 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(2)));
-            nav_roll_cd  = g.roll_limit_cd / 3 * r3;
+            nav_roll_cd  = g.roll_limit_cd * r3;
+            thermal_delay=0;
+            }
             nav_pitch_cd       = 0;
             // throttle is passthrough
             break;
