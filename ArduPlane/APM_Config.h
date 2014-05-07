@@ -30,4 +30,8 @@
 float r3;
 int   thermal_delay;
 int   thermal_delay_target;
+int   delay_min = 20;
+int   delay_max = 80;
+float angle_sx = -1;
+float angle_dx =1;
 

@@ -1194,10 +1194,10 @@ static void update_current_flight_mode(void)
             // frankie mod a dice gives circle radiues
             thermal_delay++;
             if (thermal_delay>thermal_delay_target) {
-              r3 = -1 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(2)));
+              r3 = angle_sx + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(angle_dx-angle_sx)));
               nav_roll_cd  = g.roll_limit_cd * r3;
               thermal_delay=0;
-              thermal_delay_target=20 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(80-20)));
+              thermal_delay_target=delay_min + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(delay_max-delay_min)));
             }
             nav_pitch_cd       = 0;
             // throttle is passthrough
