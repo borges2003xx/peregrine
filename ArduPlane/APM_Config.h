@@ -34,4 +34,7 @@ int   delay_min = 20;
 int   delay_max = 80;
 float angle_sx = -1;
 float angle_dx =1;
+int   actual_climb_rate;
+int   old_climb_rate;
+int   delta_roll = 1;
 
