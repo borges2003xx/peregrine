@@ -1202,7 +1202,7 @@ static void update_current_flight_mode(void)
             old_climb_rate=actual_climb_rate;
             
             //if (nav_roll_cd < -g.roll_limit_cd || nav_roll_cd > -g.roll_limit_cd)
-            //   nav_roll_cd=g.roll_limit_cd;
+            //  nav_roll_cd=g.roll_limit_cd;
             
             thermal_delay++;
             if (thermal_delay>thermal_delay_target) {
