@@ -1193,12 +1193,30 @@ static void update_current_flight_mode(void)
             // nav_roll_cd        = 0;
             // frankie mod a dice gives circle radiues
             // we value actual climb rate vs old climb rate . we follow heinreich rule
+            
             actual_climb_rate=read_climb_rate();
-            if (actual_climb_rate>old_climb_rate) 
-              nav_roll_cd = nav_roll_cd - delta_roll;
-            else if (read_climb_rate()==old_climb_rate) {}
-            else
-              nav_roll_cd = nav_roll_cd + delta_roll;
+            
+            if (actual_climb_rate>=old_climb_rate) {
+              if (nav_roll_cd !=0 && nav_roll_cd <0 ) 
+                   nav_roll_cd = nav_roll_cd + delta_roll;
+              if (nav_roll_cd !=0 && nav_roll_cd >= 0 ) 
+                   nav_roll_cd = nav_roll_cd - delta_roll;
+              }
+              
+            
+            //else
+            ///  nav_roll_cd = nav_roll_cd + delta_roll;
+             
+            //if (nav_roll_cd> abs(g.roll_limit_cd)) { 
+            //  r3 = angle_sx + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(angle_dx-angle_sx)));
+            //  nav_roll_cd  = g.roll_limit_cd * r3;
+            // };
+            
+            
+                 
+                   
+            
+            
             old_climb_rate=actual_climb_rate;
             
             //if (nav_roll_cd < -g.roll_limit_cd || nav_roll_cd > -g.roll_limit_cd)
