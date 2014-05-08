@@ -1,4 +1,21 @@
-This is a fork of ArduPlane that supports thermal soaring.
+
+
+
+
+
+
+
+
+This is a fork of ArduPlane made by Pete Brawell that supports thermal soaring.
+
+we work on paper of peregrine falcon thermal soaring strategy in
+http://www.technologyreview.com/view/421901/peregrine-falcons-inspire-new-thermal-soaring-strategy-for-uavs/.
+with Pete's thermal mode decribe after ( many thanks to him , he's a great guy!), we cannibalized a flight mode (stabilize) , mod it, to implementet falcon's strategy.
+We also add Reichmann rule (partially) in which when you're in thermal you decrease roll angle to increase vertical lift, and when the last stops go away.
+
+It's an alpha release to test very well.
+
+
 
 WARNINGS:
 =========

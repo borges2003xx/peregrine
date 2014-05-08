@@ -1224,7 +1224,9 @@ static void update_current_flight_mode(void)
             
             thermal_delay++;
             if (thermal_delay>thermal_delay_target) {
-              r3 = angle_sx + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(angle_dx-angle_sx)));
+              
+
+            r3 = angle_sx + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(angle_dx-angle_sx)));
               nav_roll_cd  = g.roll_limit_cd * r3;
               thermal_delay=0;
               thermal_delay_target=delay_min + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(delay_max-delay_min)));
